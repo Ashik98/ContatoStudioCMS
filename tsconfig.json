@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      // This path is correct and should be kept as-is.
+      "sanity": ["./node_modules/sanity"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "sanity.config.ts",
+    "sanity.cli.ts",
+    "schemas/**/*.ts",
+    "schemaTypes/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
