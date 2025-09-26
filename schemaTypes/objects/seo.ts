@@ -1,3 +1,4 @@
+// schemaTypes/objects/seo.ts
 import {defineField, defineType} from 'sanity'
 
 export const seo = defineType({
@@ -25,3 +26,4 @@ export const seo = defineType({
     }),
   ],
 })
+
