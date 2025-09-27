@@ -39,6 +39,14 @@ import { homeFeatureBlocks } from './documents/homeFeatureBlocks'
 import { homeVideoBlock } from './documents/homeVideoBlock'
 import {homeTestimonialHeader} from './documents/homeTestimonialHeader'
 import { homeTestimonialBlocks } from './documents/homeTestimonialBlocks'
+import { homePricingHeader } from './documents/homePricingHeader'
+import { homePricingBlocks } from './documents/homePricingBlocks'
+import { homePricingFooter } from './documents/homePricingFooter'
+import { footerHeader } from './documents/footerHeader'
+import { footerAddressBlock } from './documents/footerAddressBlock'
+import { footerNavLinksBlock } from './documents/footerNavLinksBlock'
+import { footerSocialMediaLinksBlock } from './documents/footerSocialMediaLinksBlock'
+import { footerCopyrightText } from './documents/footerCopyrightText'
 
 
 // Export everything as schemaTypes
@@ -81,5 +89,7 @@ export const schemaTypes = [
   homeFeatureBlocks,
   homeVideoBlock,
   homeTestimonialHeader,
-  homeTestimonialBlocks
+  homeTestimonialBlocks,
+  homePricingHeader,homePricingBlocks,homePricingFooter,
+  footerHeader,footerAddressBlock,footerNavLinksBlock,footerSocialMediaLinksBlock,footerCopyrightText 
 ]
