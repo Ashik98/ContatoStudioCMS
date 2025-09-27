@@ -175,18 +175,9 @@ export const article = defineType({
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
-      description: 'Primary category for the article.',
-      options: {
-        list: [
-          { title: 'Technology', value: 'technology' },
-          { title: 'Business', value: 'business' },
-          { title: 'Marketing', value: 'marketing' },
-          { title: 'Design', value: 'design' },
-          { title: 'Development', value: 'development' },
-          { title: 'Other', value: 'other' },
-        ],
-      },
+      type: 'reference',
+      description: 'Select the primary category for this article.',
+      to: [{ type: 'category' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -197,7 +188,7 @@ export const article = defineType({
       validation: (rule) => rule.positive().integer(),
     }),
     defineField({
-      name: 'isFeatured',
+      name: 'isFeatured', 
       title: 'Is Featured',
       type: 'boolean',
       description: 'Toggle to mark this article as featured.',
