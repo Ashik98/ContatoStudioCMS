@@ -36,6 +36,9 @@ import { category } from './documents/category'
 import {blogPageHeader} from './documents/blogPageHeader'
 import { homeFeatureHeader } from './documents/homeFeatureHeader'
 import { homeFeatureBlocks } from './documents/homeFeatureBlocks'
+import { homeVideoBlock } from './documents/homeVideoBlock'
+import {homeTestimonialHeader} from './documents/homeTestimonialHeader'
+import { homeTestimonialBlocks } from './documents/homeTestimonialBlocks'
 
 
 // Export everything as schemaTypes
@@ -75,5 +78,8 @@ export const schemaTypes = [
   category,
   blogPageHeader,
   homeFeatureHeader,
-  homeFeatureBlocks
+  homeFeatureBlocks,
+  homeVideoBlock,
+  homeTestimonialHeader,
+  homeTestimonialBlocks
 ]
