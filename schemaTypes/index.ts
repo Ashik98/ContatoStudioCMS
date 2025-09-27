@@ -34,6 +34,8 @@ import { statSectionHeader } from './documents/statSectionHeader'
 import { statSectionBlock } from './documents/statSectionBlock'
 import { category } from './documents/category'
 import {blogPageHeader} from './documents/blogPageHeader'
+import { homeFeatureHeader } from './documents/homeFeatureHeader'
+import { homeFeatureBlocks } from './documents/homeFeatureBlocks'
 
 
 // Export everything as schemaTypes
@@ -71,5 +73,7 @@ export const schemaTypes = [
   statSectionHeader,
   statSectionBlock,
   category,
-  blogPageHeader
+  blogPageHeader,
+  homeFeatureHeader,
+  homeFeatureBlocks
 ]
