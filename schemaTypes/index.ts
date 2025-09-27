@@ -31,6 +31,7 @@ import { signupPage } from './documents/signupPage'
 import {landingPageHero} from './documents/landingPageHero'
 import { heroImageGallery } from './documents/heroImageGallery'
 import { statSectionHeader } from './documents/statSectionHeader'
+import { statSectionBlock } from './documents/statSectionBlock'
 // Export everything as schemaTypes
 export const schemaTypes = [
   // Objects
@@ -63,5 +64,6 @@ export const schemaTypes = [
   signupPage,
   landingPageHero,
   heroImageGallery,
-  statSectionHeader
+  statSectionHeader,
+  statSectionBlock
 ]
