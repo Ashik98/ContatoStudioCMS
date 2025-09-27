@@ -29,7 +29,8 @@ import {siteSettings} from './documents/siteSettings'
 import { loginPage } from './documents/loginPage'
 import { signupPage } from './documents/signupPage'
 import {landingPageHero} from './documents/landingPageHero'
-
+import { heroImageGallery } from './documents/heroImageGallery'
+import { statSectionHeader } from './documents/statSectionHeader'
 // Export everything as schemaTypes
 export const schemaTypes = [
   // Objects
@@ -60,5 +61,7 @@ export const schemaTypes = [
   siteSettings,
   loginPage,
   signupPage,
-  landingPageHero
+  landingPageHero,
+  heroImageGallery,
+  statSectionHeader
 ]
