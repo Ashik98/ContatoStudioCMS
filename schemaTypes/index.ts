@@ -26,6 +26,7 @@ import {gallery} from './documents/gallery'
 import {video} from './documents/video'
 import {documentUpload} from './documents/documentUpload'
 import {siteSettings} from './documents/siteSettings'
+import { loginPage } from './documents/loginPage'
 
 // Export everything as schemaTypes
 export const schemaTypes = [
@@ -55,4 +56,5 @@ export const schemaTypes = [
   video,
   documentUpload,
   siteSettings,
+  loginPage
 ]
