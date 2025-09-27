@@ -53,6 +53,9 @@ import { aboutUsTeam } from './documents/aboutUsTeam'
 import { signupHeaderBlock } from './documents/signupHeaderBlock'
 import { signUpHeroBlock } from './documents/signUpHeroBlock'
 import { downloadUrls } from './documents/downloadUrls'
+import { featureHeaderText } from './documents/featureHeaderText'
+import { featureMainBlock } from './documents/featureMainBlock'
+import { featureListing } from './documents/featureListing'
 
 
 // Export everything as schemaTypes
@@ -100,5 +103,5 @@ export const schemaTypes = [
   footerHeader,footerAddressBlock,footerNavLinksBlock,footerSocialMediaLinksBlock,footerCopyrightText ,
   videoHeaderText ,aboutUsHeadBlock ,aboutUsTeam ,
   signupHeaderBlock ,signUpHeroBlock ,
-  downloadUrls 
+  downloadUrls , featureHeaderText , featureMainBlock ,featureListing 
 ]
