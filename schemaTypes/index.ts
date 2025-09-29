@@ -56,6 +56,17 @@ import { downloadUrls } from './documents/downloadUrls'
 import { featureHeaderText } from './documents/featureHeaderText'
 import { featureMainBlock } from './documents/featureMainBlock'
 import { featureListing } from './documents/featureListing'
+import { aboutPage } from './documents/AboutPage/aboutPage'
+import { companyStorySection } from './objects/About/companyStorySection'
+import { teamIntroSection } from './objects/About/teamIntroSection'
+import { teamMembersGrid } from './objects/About/teamMembersGrid'
+import { contactHRSection } from './objects/About/contactHRSection'
+import { featuresPage } from './documents/FeaturesPage/featuresPage'
+import { heroCallToAction } from './objects/Features/heroCallToAction'
+import { featuresGrid } from './objects/Features/featuresGrid'
+import { whatsNewSection } from './objects/Features/whatsNewSection'
+import { appScreensGallery } from './objects/Features/appScreensGallery'
+import { experienceConnectoCarousel } from './objects/Features/experienceConnectoCarousel'
 
 
 // Export everything as schemaTypes
@@ -103,5 +114,20 @@ export const schemaTypes = [
   footerHeader,footerAddressBlock,footerNavLinksBlock,footerSocialMediaLinksBlock,footerCopyrightText ,
   videoHeaderText ,aboutUsHeadBlock ,aboutUsTeam ,
   signupHeaderBlock ,signUpHeroBlock ,
-  downloadUrls , featureHeaderText , featureMainBlock ,featureListing 
+  downloadUrls , featureHeaderText , featureMainBlock ,featureListing ,
+
+  //aboutPage
+  aboutPage,
+  companyStorySection,
+  teamIntroSection,
+  teamMembersGrid,
+  contactHRSection,
+
+  //featuresPage
+  featuresPage,
+  heroCallToAction,
+  featuresGrid,
+  whatsNewSection,
+  appScreensGallery,
+  experienceConnectoCarousel,
 ]
