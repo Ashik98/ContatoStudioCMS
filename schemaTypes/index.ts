@@ -67,6 +67,15 @@ import { featuresGrid } from './objects/Features/featuresGrid'
 import { whatsNewSection } from './objects/Features/whatsNewSection'
 import { appScreensGallery } from './objects/Features/appScreensGallery'
 import { experienceConnectoCarousel } from './objects/Features/experienceConnectoCarousel'
+import { homePage } from './documents/HomePage/homePage'
+import { contentFeaturesGrid } from './objects/HomePage/contentFeaturesGrid'
+import { networkSmarterHero } from './objects/HomePage/networkSmarterHero'
+import { qrProfileCard } from './objects/HomePage/qrProfileCard'
+import { platformLearning } from './objects/HomePage/platformLearning'
+import { pricingPlans } from './objects/HomePage/pricingPlans'
+import { trustStatistics } from './objects/HomePage/trustStatistics'
+import { userTestimonials } from './objects/HomePage/userTestimonials'
+import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
 
 
 // Export everything as schemaTypes
@@ -130,4 +139,16 @@ export const schemaTypes = [
   whatsNewSection,
   appScreensGallery,
   experienceConnectoCarousel,
+
+  //homepage
+  homePage,
+  contentFeaturesGrid,
+  networkSmarterHero,
+  qrProfileCard,
+  pricingPlans,
+  trustStatistics,
+  platformLearning,
+  userTestimonials,
+  appShowcaseSection
+  
 ]
