@@ -16,7 +16,6 @@ import {teamMemberBlock} from './objects/teamMemberBlock'
 // 📄 Documents
 import {homepage} from './documents/homepage'
 import {page} from './documents/page'
-import {article} from './documents/article'
 import {jobListing} from './documents/jobListing'
 import {caseStudy} from './documents/caseStudy'
 import {profile} from './documents/profile'
@@ -33,7 +32,6 @@ import { heroImageGallery } from './documents/heroImageGallery'
 import { statSectionHeader } from './documents/statSectionHeader'
 import { statSectionBlock } from './documents/statSectionBlock'
 import { category } from './documents/category'
-import {blogPageHeader} from './documents/blogPageHeader'
 import { homeFeatureHeader } from './documents/homeFeatureHeader'
 import { homeFeatureBlocks } from './documents/homeFeatureBlocks'
 import { homeVideoBlock } from './documents/homeVideoBlock'
@@ -76,6 +74,9 @@ import { pricingPlans } from './objects/HomePage/pricingPlans'
 import { trustStatistics } from './objects/HomePage/trustStatistics'
 import { userTestimonials } from './objects/HomePage/userTestimonials'
 import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
+import { article } from './objects/Blogs/article'
+import { blogPageHeader } from './objects/Blogs/blogPageHeader'
+import { blogPage } from './documents/BlogPage/blogPage'
 
 
 // Export everything as schemaTypes
@@ -96,7 +97,6 @@ export const schemaTypes = [
   // Documents
   homepage,
   page,
-  article,
   jobListing,
   caseStudy,
   profile,
@@ -113,7 +113,6 @@ export const schemaTypes = [
   statSectionHeader,
   statSectionBlock,
   category,
-  blogPageHeader,
   homeFeatureHeader,
   homeFeatureBlocks,
   homeVideoBlock,
@@ -149,6 +148,11 @@ export const schemaTypes = [
   trustStatistics,
   platformLearning,
   userTestimonials,
-  appShowcaseSection
+  appShowcaseSection,
+
+  //blogPage
+  article,
+  blogPageHeader,
+  blogPage,
   
 ]
