@@ -77,6 +77,9 @@ import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
 import { article } from './objects/Blogs/article'
 import { blogPageHeader } from './objects/Blogs/blogPageHeader'
 import { blogPage } from './documents/BlogPage/blogPage'
+import { VideoObject } from './objects/Videos/VideoObject'
+import { VideoHeaderObject } from './objects/Videos/VideoHeaderObject'
+import { videoPage } from './documents/Video/videoPage'
 
 
 // Export everything as schemaTypes
@@ -154,5 +157,10 @@ export const schemaTypes = [
   article,
   blogPageHeader,
   blogPage,
+
+  //videoPage
+  VideoObject,
+  VideoHeaderObject,
+  videoPage,
   
 ]
