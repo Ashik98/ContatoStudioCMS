@@ -14,17 +14,8 @@ import {testimonialBlock} from './objects/testimonialBlock'
 import {teamMemberBlock} from './objects/teamMemberBlock'
 
 // 📄 Documents
-import {homepage} from './documents/homepage'
-import {page} from './documents/page'
-import {jobListing} from './documents/jobListing'
-import {caseStudy} from './documents/caseStudy'
-import {profile} from './documents/profile'
-import {company} from './documents/company'
-import {teamMember} from './documents/teamMember'
-import {gallery} from './documents/gallery'
 import {video} from './documents/video'
 import {documentUpload} from './documents/documentUpload'
-import {siteSettings} from './documents/siteSettings'
 import { loginPage } from './documents/loginPage'
 import { signupPage } from './documents/signupPage'
 import {landingPageHero} from './documents/landingPageHero'
@@ -74,12 +65,6 @@ import { pricingPlans } from './objects/HomePage/pricingPlans'
 import { trustStatistics } from './objects/HomePage/trustStatistics'
 import { userTestimonials } from './objects/HomePage/userTestimonials'
 import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
-// import { article } from './objects/Blogs/article'
-// import { blogPageHeader } from './objects/Blogs/blogPageHeader'
-// import { blogPage } from './documents/BlogPage/blogPage'
-// import { VideoObject } from './objects/Videos/VideoObject'
-// import { VideoHeaderObject } from './objects/Videos/VideoHeaderObject'
-// import { videoPage } from './documents/Video/videoPage'
 import footerDocument from './documents/Footer/footerDocument' 
 import { article } from './documents/article'
 import { supportPageType } from './documents/SupportPage/supportPage'
@@ -106,7 +91,6 @@ export const schemaTypes = [
 
   video,
   documentUpload,
-  siteSettings,
   loginPage,
   signupPage,
   landingPageHero,
