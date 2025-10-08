@@ -74,13 +74,15 @@ import { pricingPlans } from './objects/HomePage/pricingPlans'
 import { trustStatistics } from './objects/HomePage/trustStatistics'
 import { userTestimonials } from './objects/HomePage/userTestimonials'
 import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
-import { article } from './objects/Blogs/article'
-import { blogPageHeader } from './objects/Blogs/blogPageHeader'
-import { blogPage } from './documents/BlogPage/blogPage'
-import { VideoObject } from './objects/Videos/VideoObject'
-import { VideoHeaderObject } from './objects/Videos/VideoHeaderObject'
-import { videoPage } from './documents/Video/videoPage'
-import footerDocument from './documents/Footer/footerDocument'
+// import { article } from './objects/Blogs/article'
+// import { blogPageHeader } from './objects/Blogs/blogPageHeader'
+// import { blogPage } from './documents/BlogPage/blogPage'
+// import { VideoObject } from './objects/Videos/VideoObject'
+// import { VideoHeaderObject } from './objects/Videos/VideoHeaderObject'
+// import { videoPage } from './documents/Video/videoPage'
+import footerDocument from './documents/Footer/footerDocument' 
+import { article } from './documents/article'
+import { supportPageType } from './documents/SupportPage/supportPage'
 
 
 // Export everything as schemaTypes
@@ -99,14 +101,8 @@ export const schemaTypes = [
   teamMemberBlock,
 
   // Documents
-  homepage,
-  page,
-  jobListing,
-  caseStudy,
-  profile,
-  company,
-  teamMember,
-  gallery,
+ 
+
   video,
   documentUpload,
   siteSettings,
@@ -154,16 +150,9 @@ export const schemaTypes = [
   userTestimonials,
   appShowcaseSection,
 
-  //blogPage
-  article,
-  blogPageHeader,
-  blogPage,
-
-  //videoPage
-  VideoObject,
-  VideoHeaderObject,
-  videoPage,
   //footer
-  footerDocument 
-  
+  footerDocument ,
+  article ,
+  //support
+  supportPageType,
 ]
