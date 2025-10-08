@@ -83,6 +83,7 @@ import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
 import footerDocument from './documents/Footer/footerDocument' 
 import { article } from './documents/article'
 import { supportPageType } from './documents/SupportPage/supportPage'
+import { newsletterSubscription } from './documents/newsLetterSubscription'
 
 
 // Export everything as schemaTypes
@@ -155,4 +156,5 @@ export const schemaTypes = [
   article ,
   //support
   supportPageType,
+  newsletterSubscription
 ]
