@@ -48,6 +48,7 @@ import { article } from './documents/article'
 import { supportPageType } from './documents/SupportPage/supportPage'
 import { newsletterSubscription } from './documents/newsLetterSubscription'
 import { blogPageHeader } from './documents/blogPageHeader'
+import { signupPageType } from './documents/SignUpPage/signupPageType'
 
 
 // Export everything as schemaTypes
@@ -109,5 +110,8 @@ export const schemaTypes = [
   blogPageHeader,
   //support
   supportPageType,
-  newsletterSubscription
+  newsletterSubscription,
+
+  //signupPage
+  signupPageType
 ]
