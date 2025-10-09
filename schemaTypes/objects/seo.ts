@@ -170,24 +170,7 @@ export const seo = defineType({
     }),
 
 
-    // Image Alt Text (Main Image)
-    defineField({
-      name: 'openGraphImage',
-      title: 'Open Graph Image (Legacy)',
-      type: 'image',
-      description: 'Fallback OG image (use Open Graph > Image instead)',
-      options: { hotspot: true },
-      fields: [
-        defineField({
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          description: 'Alternative text describing this image',
-          validation: (rule) => rule.required(),
-        }),
-      ],
-      hidden: true, // Hidden since we have the new OG structure
-    }),
+    
 
     // Indexing Control
     defineField({

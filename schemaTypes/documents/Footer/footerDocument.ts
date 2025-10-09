@@ -13,7 +13,12 @@ export const footerDocument = defineType({
       description: 'Internal name for this footer configuration (not visible to end users).',
       validation: (rule) => rule.required(),
     }),
-    
+    defineField({
+      name: 'seo',
+      title: 'SEO Settings',
+      type: 'seo',
+      description: 'SEO meta data for this page.',
+    }),
     // Footer Header Object
     defineField({
       name: 'footerHeader',

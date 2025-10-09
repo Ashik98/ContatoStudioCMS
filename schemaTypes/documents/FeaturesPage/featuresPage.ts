@@ -14,18 +14,10 @@ export const featuresPage = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'seoTitle',
-      title: 'SEO Title',
-      type: 'string',
-      description: 'Title for search engines and browser tab.',
-    }),
-    defineField({
-      name: 'seoDescription',
-      title: 'SEO Description',
-      type: 'text',
-      rows: 3,
-      description: 'Meta description for search engines.',
-      validation: (rule) => rule.max(160),
+      name: 'seo',
+      title: 'SEO Settings',
+      type: 'seo',
+      description: 'SEO meta data for this page.',
     }),
     defineField({
       name: 'pageBuilder',

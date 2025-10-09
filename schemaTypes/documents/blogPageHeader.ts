@@ -28,6 +28,12 @@ export const blogPageHeader = defineType({
       description: 'Supporting description text below the main heading.',
       validation: (rule) => rule.required().max(200),
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO Settings',
+      type: 'seo',
+      description: 'SEO meta data for this page.',
+    }),
   ],
   preview: {
     select: {

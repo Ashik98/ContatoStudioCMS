@@ -14,6 +14,23 @@ export const homePage = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'logo',
+      title: 'Company Logo',
+      type: 'image',
+      description: 'Company logo displayed in the header.',
+      options: {
+        hotspot: true,
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'companyName',
+      title: 'Company Name',
+      type: 'string',
+      description: 'Company name displayed next to the logo (e.g., "Contato").',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'seo',
       title: 'SEO Settings',
       type: 'seo',
