@@ -47,6 +47,7 @@ import { newsletterSubscription } from './documents/newsLetterSubscription'
 import { blogPageHeader } from './documents/blogPageHeader'
 import { signupPageType } from './documents/SignUpPage/signupPageType'
 import { ourPartners } from './objects/HomePage/ourPartners'
+import { LogoDocument } from './documents/logoDocument'
 
 
 // Export everything as schemaTypes
@@ -65,7 +66,7 @@ export const schemaTypes = [
   teamMemberBlock,
 
   // Documents
- 
+ LogoDocument,
 
   video,
   documentUpload,
