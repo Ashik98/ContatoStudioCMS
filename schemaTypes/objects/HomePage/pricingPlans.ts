@@ -94,9 +94,20 @@ export const pricingPlans = defineType({
     defineField({
       name: 'bottomText',
       title: 'Bottom Text',
-      type: 'text',
-      rows: 2,
+      type: 'string'
     }),
+    defineField({
+  name: 'highlights',
+  title: 'Highlights',
+  description: 'Short marketing highlights like “No credit card required”, “Cancel anytime”, etc.',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags', // Displays items as tags in the Studio
+  },
+  validation: (rule) => rule.min(1).error('Please add at least one highlight'),
+})
+
   ],
   preview: {
     select: {

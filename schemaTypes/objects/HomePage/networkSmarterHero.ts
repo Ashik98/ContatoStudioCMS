@@ -116,6 +116,11 @@ export const networkSmarterHero = defineType({
           title: 'Video Duration',
           type: 'string',
         },
+        {
+          name: 'demoUrl',
+          title: 'Demo URL',
+          type: 'url',
+        },
       ],
     }),
   ],

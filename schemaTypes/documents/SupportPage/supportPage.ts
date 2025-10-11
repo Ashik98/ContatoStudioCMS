@@ -61,93 +61,93 @@ export const supportPageType = defineType({
     }),
 
     // Categories section
-    defineField({
-      name: 'categoriesSection',
-      title: 'Categories Section',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'sectionTitle',
-          title: 'Section Title',
-          type: 'string',
-          initialValue: 'Browse by Category',
-        }),
-        defineField({
-          name: 'sectionDescription',
-          title: 'Section Description',
-          type: 'text',
-          rows: 2,
-          initialValue: 'Find the help you need organized by topic. Each category contains detailed guides and solutions.',
-        }),
-        defineField({
-          name: 'categories',
-          title: 'Support Categories',
-          type: 'array',
-          of: [
-            defineArrayMember({
-              type: 'object',
-              fields: [
-                defineField({
-                  name: 'title',
-                  title: 'Category Title',
-                  type: 'string',
-                  validation: (Rule) => Rule.required(),
-                }),
-                defineField({
-                  name: 'description',
-                  title: 'Category Description',
-                  type: 'text',
-                  rows: 2,
-                }),
-                defineField({
-                  name: 'icon',
-                  title: 'Category Icon',
-                  type: 'string',
-                  description: 'Icon identifier (e.g., "user", "settings", "help")',
-                }),
-                defineField({
-                  name: 'articleCount',
-                  title: 'Number of Articles',
-                  type: 'number',
-                  description: 'Display count of articles in this category',
-                }),
-                defineField({
-                  name: 'topics',
-                  title: 'Category Topics',
-                  type: 'array',
-                  of: [
-                    defineArrayMember({
-                      type: 'string',
-                      title: 'Topic',
-                    }),
-                  ],
-                  description: 'List of topics covered in this category',
-                }),
-                defineField({
-                  name: 'buttonText',
-                  title: 'Button Text',
-                  type: 'string',
-                  initialValue: 'See all articles',
-                }),
-                defineField({
-                  name: 'buttonLink',
-                  title: 'Button Link',
-                  type: 'string',
-                  description: 'URL or path for the category page',
-                }),
-              ],
-              preview: {
-                select: {
-                  title: 'title',
-                  subtitle: 'description',
-                },
-              },
-            }),
-          ],
-          validation: (Rule) => Rule.min(1).max(8),
-        }),
-      ],
-    }),
+    // defineField({
+    //   name: 'categoriesSection',
+    //   title: 'Categories Section',
+    //   type: 'object',
+    //   fields: [
+    //     defineField({
+    //       name: 'sectionTitle',
+    //       title: 'Section Title',
+    //       type: 'string',
+    //       initialValue: 'Browse by Category',
+    //     }),
+    //     defineField({
+    //       name: 'sectionDescription',
+    //       title: 'Section Description',
+    //       type: 'text',
+    //       rows: 2,
+    //       initialValue: 'Find the help you need organized by topic. Each category contains detailed guides and solutions.',
+    //     }),
+    //     defineField({
+    //       name: 'categories',
+    //       title: 'Support Categories',
+    //       type: 'array',
+    //       of: [
+    //         defineArrayMember({
+    //           type: 'object',
+    //           fields: [
+    //             defineField({
+    //               name: 'title',
+    //               title: 'Category Title',
+    //               type: 'string',
+    //               validation: (Rule) => Rule.required(),
+    //             }),
+    //             defineField({
+    //               name: 'description',
+    //               title: 'Category Description',
+    //               type: 'text',
+    //               rows: 2,
+    //             }),
+    //             defineField({
+    //               name: 'icon',
+    //               title: 'Category Icon',
+    //               type: 'string',
+    //               description: 'Icon identifier (e.g., "user", "settings", "help")',
+    //             }),
+    //             defineField({
+    //               name: 'articleCount',
+    //               title: 'Number of Articles',
+    //               type: 'number',
+    //               description: 'Display count of articles in this category',
+    //             }),
+    //             defineField({
+    //               name: 'topics',
+    //               title: 'Category Topics',
+    //               type: 'array',
+    //               of: [
+    //                 defineArrayMember({
+    //                   type: 'string',
+    //                   title: 'Topic',
+    //                 }),
+    //               ],
+    //               description: 'List of topics covered in this category',
+    //             }),
+    //             defineField({
+    //               name: 'buttonText',
+    //               title: 'Button Text',
+    //               type: 'string',
+    //               initialValue: 'See all articles',
+    //             }),
+    //             defineField({
+    //               name: 'buttonLink',
+    //               title: 'Button Link',
+    //               type: 'string',
+    //               description: 'URL or path for the category page',
+    //             }),
+    //           ],
+    //           preview: {
+    //             select: {
+    //               title: 'title',
+    //               subtitle: 'description',
+    //             },
+    //           },
+    //         }),
+    //       ],
+    //       validation: (Rule) => Rule.min(1).max(8),
+    //     }),
+    //   ],
+    // }),
 
     // Call-to-action section
     defineField({
@@ -190,74 +190,74 @@ export const supportPageType = defineType({
     }),
 
     // Additional content sections
-    defineField({
-      name: 'additionalSections',
-      title: 'Additional Content Sections',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          name: 'textSection',
-          title: 'Text Section',
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              title: 'Section Title',
-              type: 'string',
-            }),
-            defineField({
-              name: 'content',
-              title: 'Content',
-              type: 'array',
-              of: [{ type: 'block' }],
-            }),
-          ],
-        }),
-        defineArrayMember({
-          name: 'faqSection',
-          title: 'FAQ Section',
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              title: 'FAQ Section Title',
-              type: 'string',
-              initialValue: 'Frequently Asked Questions',
-            }),
-            defineField({
-              name: 'faqs',
-              title: 'FAQs',
-              type: 'array',
-              of: [
-                defineArrayMember({
-                  type: 'object',
-                  fields: [
-                    defineField({
-                      name: 'question',
-                      title: 'Question',
-                      type: 'string',
-                      validation: (Rule) => Rule.required(),
-                    }),
-                    defineField({
-                      name: 'answer',
-                      title: 'Answer',
-                      type: 'array',
-                      of: [{ type: 'block' }],
-                      validation: (Rule) => Rule.required(),
-                    }),
-                  ],
-                  preview: {
-                    select: {
-                      title: 'question',
-                    },
-                  },
-                }),
-              ],
-            }),
-          ],
-        }),
-      ],
-    }),
+    // defineField({
+    //   name: 'additionalSections',
+    //   title: 'Additional Content Sections',
+    //   type: 'array',
+    //   of: [
+    //     defineArrayMember({
+    //       name: 'textSection',
+    //       title: 'Text Section',
+    //       type: 'object',
+    //       fields: [
+    //         defineField({
+    //           name: 'title',
+    //           title: 'Section Title',
+    //           type: 'string',
+    //         }),
+    //         defineField({
+    //           name: 'content',
+    //           title: 'Content',
+    //           type: 'array',
+    //           of: [{ type: 'block' }],
+    //         }),
+    //       ],
+    //     }),
+    //     defineArrayMember({
+    //       name: 'faqSection',
+    //       title: 'FAQ Section',
+    //       type: 'object',
+    //       fields: [
+    //         defineField({
+    //           name: 'title',
+    //           title: 'FAQ Section Title',
+    //           type: 'string',
+    //           initialValue: 'Frequently Asked Questions',
+    //         }),
+    //         defineField({
+    //           name: 'faqs',
+    //           title: 'FAQs',
+    //           type: 'array',
+    //           of: [
+    //             defineArrayMember({
+    //               type: 'object',
+    //               fields: [
+    //                 defineField({
+    //                   name: 'question',
+    //                   title: 'Question',
+    //                   type: 'string',
+    //                   validation: (Rule) => Rule.required(),
+    //                 }),
+    //                 defineField({
+    //                   name: 'answer',
+    //                   title: 'Answer',
+    //                   type: 'array',
+    //                   of: [{ type: 'block' }],
+    //                   validation: (Rule) => Rule.required(),
+    //                 }),
+    //               ],
+    //               preview: {
+    //                 select: {
+    //                   title: 'question',
+    //                 },
+    //               },
+    //             }),
+    //           ],
+    //         }),
+    //       ],
+    //     }),
+    //   ],
+    // }),
 
     // SEO field using your common seo object
     defineField({

@@ -44,6 +44,7 @@ export const homePage = defineType({
       of: [
         { type: 'contentFeaturesGrid' },
         { type: 'networkSmarterHero' },
+        { type: 'ourPartners' },
         { type: 'appShowcaseSection' },
         { type: 'pricingPlans' },
         { type: 'trustStatistics' },

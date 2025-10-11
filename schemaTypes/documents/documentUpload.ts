@@ -43,18 +43,39 @@ export const documentUpload = defineType({
     }),
 
     // File Upload
+    // Documents Upload List
+defineField({
+  name: 'documents',
+  title: 'Documents',
+  type: 'array',
+  of: [
     defineField({
-      name: 'file',
-      title: 'Document File',
-      type: 'file',
-      description: 'Upload your document (PDF, DOC, DOCX, etc.)',
-      options: {
-        accept: '.pdf,.doc,.docx,.txt,.rtf,.xls,.xlsx,.ppt,.pptx',
-      },
-      validation: (rule) => rule.required(),
-    }),
-
-    // Categorization
+      name: 'documentItem',
+      title: 'Document Item',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (rule) => rule.required().error('Title is required'),
+        }),
+        defineField({
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        }),
+        defineField({
+          name: 'file',
+          title: 'Upload File',
+          type: 'file',
+          description: 'Upload your document (PDF, DOC, DOCX, etc.)',
+          options: {
+            accept: '.pdf,.doc,.docx,.txt,.rtf,.xls,.xlsx,.ppt,.pptx',
+          },
+          validation: (rule) => rule.required().error('File upload is required'),
+        }),
+        // Categorization
     defineField({
       name: 'category',
       title: 'Category',
@@ -63,24 +84,6 @@ export const documentUpload = defineType({
       to: [{ type: 'category' }],
       validation: (rule) => rule.required(),
     }),
-
-    defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      description: 'Add relevant tags to help categorize and discover this document',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
-      options: {
-        layout: 'tags',
-      },
-      validation: (rule) => rule.max(10),
-    }),
-
-    // Document Metadata
     defineField({
       name: 'fileSize',
       title: 'File Size (MB)',
@@ -169,6 +172,39 @@ export const documentUpload = defineType({
       type: 'datetime',
       description: 'Optional expiration date for time-sensitive documents',
     }),
+
+      ],
+      preview: {
+        select: {
+          title: 'title',
+          subtitle: 'subtitle',
+        },
+      },
+    }),
+  ],
+  validation: (rule) => rule.min(1).error('At least one document is required'),
+}),
+
+    
+
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      description: 'Add relevant tags to help categorize and discover this document',
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      options: {
+        layout: 'tags',
+      },
+      validation: (rule) => rule.max(10),
+    }),
+
+    // Document Metadata
+    
 
     // Status and Workflow
     defineField({

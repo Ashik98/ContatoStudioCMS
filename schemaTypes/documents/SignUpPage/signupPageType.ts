@@ -67,34 +67,6 @@ export const signupPageType = defineType({
           type: 'object',
           fields: [
             defineField({
-              name: 'iosQR',
-              title: 'iOS QR Code',
-              type: 'image',
-              description: 'QR code for iOS App Store',
-              fields: [
-                defineField({
-                  name: 'alt',
-                  title: 'Alt Text',
-                  type: 'string',
-                  initialValue: 'QR code to download iOS app',
-                }),
-              ],
-            }),
-            defineField({
-              name: 'androidQR',
-              title: 'Android QR Code', 
-              type: 'image',
-              description: 'QR code for Google Play Store',
-              fields: [
-                defineField({
-                  name: 'alt',
-                  title: 'Alt Text',
-                  type: 'string',
-                  initialValue: 'QR code to download Android app',
-                }),
-              ],
-            }),
-            defineField({
               name: 'iosLabel',
               title: 'iOS Label',
               type: 'string',
@@ -277,74 +249,15 @@ export const signupPageType = defineType({
       ],
     }),
 
-    // Social Proof Section
+    // Signup Base Section
     defineField({
-      name: 'socialProofSection',
-      title: 'Social Proof Section',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'enabled',
-          title: 'Show Social Proof',
-          type: 'boolean',
-          initialValue: true,
-        }),
-        defineField({
-          name: 'userCount',
-          title: 'User Count',
+          name: 'signupBaseLabel',
+          title: 'Signup Base Label',
           type: 'string',
-          description: 'Number of users (e.g., "50,000+")',
-          initialValue: '50,000+',
+          initialValue: 'professionals networking smarter',
         }),
-        defineField({
-          name: 'userCountLabel',
-          title: 'User Count Label',
-          type: 'string',
-          initialValue: 'professionals already networking smarter',
-        }),
-        defineField({
-          name: 'rating',
-          title: 'App Rating',
-          type: 'number',
-          description: 'Average app store rating (e.g., 4.8)',
-          validation: (Rule) => Rule.min(1).max(5),
-          initialValue: 4.8,
-        }),
-        defineField({
-          name: 'ratingLabel',
-          title: 'Rating Label',
-          type: 'string',
-          initialValue: 'rating on app stores',
-        }),
-        defineField({
-          name: 'showStars',
-          title: 'Show Star Rating',
-          type: 'boolean',
-          initialValue: true,
-        }),
-      ],
-    }),
 
-    // Page Settings
-    defineField({
-      name: 'pageSettings',
-      title: 'Page Settings',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'showHeader',
-          title: 'Show Header Navigation',
-          type: 'boolean',
-          initialValue: true,
-        }),
-        defineField({
-          name: 'showFooter',
-          title: 'Show Footer',
-          type: 'boolean',
-          initialValue: true,
-        }),
-      ],
-    }),
+    
 
     // SEO Settings (using your existing SEO object)
     defineField({

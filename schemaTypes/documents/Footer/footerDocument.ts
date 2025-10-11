@@ -484,6 +484,41 @@ export const footerDocument = defineType({
       ],
     }),
 
+    defineField({
+  name: 'footerPolicies',
+  title: 'Footer – Privacy Policy, Cookie & Terms Section',
+  type: 'array',
+  of: [
+    defineField({
+      name: 'policyItem',
+      title: 'Policy Item',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'text',
+          title: 'Text',
+          type: 'string',
+          description: 'Enter the policy label (e.g., Privacy Policy, Cookies, Terms & Conditions)',
+          validation: (rule) => rule.required().error('Policy text is required'),
+        }),
+        defineField({
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+          description: 'Enter the link to the policy page',
+          validation: (rule) =>
+            rule
+              .uri({ scheme: ['http', 'https', 'mailto'] })
+              .required()
+              .error('A valid URL is required'),
+        }),
+      ],
+    }),
+  ],
+  validation: (rule) => rule.min(1).error('At least one footer policy link is required'),
+}),
+
+
     // Footer Copyright Text Object
     defineField({
       name: 'footerCopyrightText',
