@@ -57,18 +57,13 @@ export const companyStorySection = defineType({
               rows: 2,
             }),
             defineField({
-              name: 'icon',
-              title: 'Icon',
-              type: 'string',
-              options: {
-                list: [
-                  { title: 'Heart (Human-Centered)', value: 'heart' },
-                  { title: 'Lightning (Innovation)', value: 'lightning' },
-                  { title: 'Shield (Trust & Privacy)', value: 'shield' },
-                  { title: 'Globe (Global Impact)', value: 'globe' },
-                ],
-              },
-            }),
+  name: 'iconName',
+  title: 'Icon Name',
+  description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+  type: 'string',
+  validation: (rule) => rule.required().error('Icon name is required'),
+}),
+
           ],
           preview: {
             select: {

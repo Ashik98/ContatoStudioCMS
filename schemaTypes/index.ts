@@ -17,11 +17,8 @@ import {teamMemberBlock} from './objects/teamMemberBlock'
 import {video} from './documents/video'
 import {documentUpload} from './documents/documentUpload'
 import { loginPage } from './documents/loginPage'
-import { signupPage } from './documents/signupPage'
 import { category } from './documents/category'
 import { videoHeaderText } from './documents/videoHeaderText'
-import { signupHeaderBlock } from './documents/signupHeaderBlock'
-import { signUpHeroBlock } from './documents/signUpHeroBlock'
 import { downloadUrls } from './documents/downloadUrls'
 import { aboutPage } from './documents/AboutPage/aboutPage'
 import { companyStorySection } from './objects/About/companyStorySection'
@@ -73,10 +70,8 @@ export const schemaTypes = [
   video,
   documentUpload,
   loginPage,
-  signupPage,
   category,
   videoHeaderText ,
-  signupHeaderBlock ,signUpHeroBlock ,
   downloadUrls , 
 
   //aboutPage

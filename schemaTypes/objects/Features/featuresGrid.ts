@@ -38,19 +38,13 @@ export const featuresGrid = defineType({
               validation: (rule) => rule.required().max(150),
             }),
             defineField({
-              name: 'icon',
-              title: 'Feature Icon',
-              type: 'string',
-              options: {
-                list: [
-                  { title: 'Folder (File Management)', value: 'folder' },
-                  { title: 'Lightning (Productivity)', value: 'lightning' },
-                  { title: 'Chart (Analytics)', value: 'chart' },
-                  { title: 'Shield (Protection)', value: 'shield' },
-                ],
-              },
-              validation: (rule) => rule.required(),
-            }),
+  name: 'iconName',
+  title: 'Icon Name',
+  description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+  type: 'string',
+  validation: (rule) => rule.required().error('Icon name is required'),
+})
+,
             defineField({
               name: 'orderIndex',
               title: 'Display Order',

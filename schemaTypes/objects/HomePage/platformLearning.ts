@@ -28,18 +28,12 @@ export const platformLearning = defineType({
           name: 'learningFeature',
           fields: [
             defineField({
-              name: 'icon',
-              title: 'Feature Icon',
-              type: 'string',
-              options: {
-                list: [
-                  { title: 'Users (Team Collaboration)', value: 'users' },
-                  { title: 'Chart (Analytics)', value: 'chart' },
-                  { title: 'Map (Success Stories)', value: 'map' },
-                  { title: 'Book (Learning)', value: 'book' },
-                ],
-              },
-            }),
+  name: 'iconName',
+  title: 'Icon Name',
+  description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+  type: 'string',
+  validation: (rule) => rule.required().error('Icon name is required'),
+}),
             defineField({
               name: 'title',
               title: 'Feature Title',
