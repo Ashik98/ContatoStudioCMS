@@ -66,6 +66,16 @@ defineField({
           type: 'string',
         }),
         defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: { 
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: (rule) => rule.required(),
+    }),
+        defineField({
           name: 'file',
           title: 'Upload File',
           type: 'file',
