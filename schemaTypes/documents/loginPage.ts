@@ -22,9 +22,15 @@ export const loginPage = defineType({
     defineField({
       name: 'heroTagline',
       title: 'Hero Tagline',
-      type: 'text',
-      rows: 2,
+      type: 'string',
       description: 'A short supporting tagline or sub-heading.',
+      validation: (rule) => rule.max(160),
+    }),
+    defineField({
+      name: 'heroHighlightedText',
+      title: 'Hero Highlighted Text',
+      type: 'string',
+      description: 'A short supporting highlighted text',
       validation: (rule) => rule.max(160),
     }),
     defineField({
