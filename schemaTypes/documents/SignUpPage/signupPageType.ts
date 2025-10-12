@@ -185,20 +185,18 @@ export const signupPageType = defineType({
           initialValue: 'mobile app',
         }),
         defineField({
-          name: 'phoneImage',
-          title: 'Phone Mockup Image',
-          type: 'image',
-          description: 'Mobile phone showing the app interface',
-          options: { hotspot: true },
-          fields: [
-            defineField({
-              name: 'alt',
-              title: 'Alt Text',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            }),
-          ],
+          name: 'iconName',
+          title: 'Icon Name',
+          description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+          type: 'string',
+          validation: (rule) => rule.required().error('Icon name is required'),
         }),
+        defineField({
+                      name: 'alt',
+                      title: 'Alt Text',
+                      type: 'string',
+                      validation: (Rule) => Rule.required(),
+                    }),
         defineField({
           name: 'features',
           title: 'App Features',
@@ -208,19 +206,18 @@ export const signupPageType = defineType({
               type: 'object',
               fields: [
                 defineField({
-                  name: 'icon',
-                  title: 'Feature Icon',
-                  type: 'image',
-                  description: 'Small icon representing the feature',
-                  fields: [
-                    defineField({
+  name: 'iconName',
+  title: 'Icon Name',
+  description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+  type: 'string',
+  validation: (rule) => rule.required().error('Icon name is required'),
+}),
+defineField({
                       name: 'alt',
                       title: 'Alt Text',
                       type: 'string',
                       validation: (Rule) => Rule.required(),
                     }),
-                  ],
-                }),
                 defineField({
                   name: 'title',
                   title: 'Feature Title',

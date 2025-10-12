@@ -7,25 +7,24 @@ export const loginPage = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Page Title',
-      type: 'string',
-      description: 'Internal name for this landing page (not visible to end users).',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'heading',
       title: 'Main Heading',
       type: 'string',
       description: 'The primary headline shown on the landing page.',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'tagline',
-      title: 'Tagline',
+      name: 'bottomText',
+      title: 'Bottom Text',
       type: 'text',
       rows: 2,
-      description: 'A short supporting tagline or sub-heading.',
+      description: 'A short bottom text ',
       validation: (rule) => rule.max(160),
+    }),
+    defineField({
+      name: 'signUpUrl',
+      title: 'Sign Up URL',
+      type: 'url', 
+      description: 'signup url ',
     }),
     defineField({
       name: 'seo',
