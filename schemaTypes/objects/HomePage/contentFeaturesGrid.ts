@@ -28,6 +28,13 @@ export const contentFeaturesGrid = defineType({
           name: 'feature',
           fields: [
             defineField({
+  name: 'iconName',
+  title: 'Icon Name',
+  description: 'Enter the icon name (e.g., "star", "check", "arrow-right")',
+  type: 'string',
+  validation: (rule) => rule.required().error('Icon name is required'),
+}),
+            defineField({
               name: 'featureTitle',
               title: 'Feature Title',
               type: 'string',
