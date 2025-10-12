@@ -12,6 +12,21 @@ export const loginPage = defineType({
       description: 'The primary headline shown on the landing page.',
       validation: (rule) => rule.required(),
     }),
+     defineField({
+      name: 'heroHeading',
+      title: 'Hero Heading',
+      type: 'string',
+      description: 'The primary headline shown on the hero section.',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'heroTagline',
+      title: 'Hero Tagline',
+      type: 'text',
+      rows: 2,
+      description: 'A short supporting tagline or sub-heading.',
+      validation: (rule) => rule.max(160),
+    }),
     defineField({
       name: 'bottomText',
       title: 'Bottom Text',
