@@ -48,7 +48,6 @@ import { blogPageHeader } from './documents/blogPageHeader'
 import { signupPageType } from './documents/SignUpPage/signupPageType'
 import { ourPartners } from './objects/HomePage/ourPartners'
 import { LogoDocument } from './documents/logoDocument'
-import { otpPage } from './documents/otpPage'
 
 
 // Export everything as schemaTypes
@@ -72,7 +71,6 @@ export const schemaTypes = [
   video,
   documentUpload,
   loginPage,
-  otpPage,
   category,
   videoHeaderText ,
   downloadUrls , 
