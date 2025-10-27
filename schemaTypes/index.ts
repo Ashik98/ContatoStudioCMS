@@ -48,6 +48,7 @@ import { blogPageHeader } from './documents/blogPageHeader'
 import { signupPageType } from './documents/SignUpPage/signupPageType'
 import { ourPartners } from './objects/HomePage/ourPartners'
 import { LogoDocument } from './documents/logoDocument'
+import { featureDetailPage } from './documents/FeaturesPage/featureDetailPage'
 
 
 // Export everything as schemaTypes
@@ -109,7 +110,7 @@ export const schemaTypes = [
   //support
   supportPageType,
   newsletterSubscription,
-
+  featureDetailPage,
   //signupPage
   signupPageType
 ]
