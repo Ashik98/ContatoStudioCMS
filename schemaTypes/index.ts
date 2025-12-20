@@ -51,6 +51,12 @@ import { LogoDocument } from './documents/logoDocument'
 import { featureDetailPage } from './documents/FeaturesPage/featureDetailPage'
 import { aboutCommunicationSection } from './objects/HomePage/aboutCommunicationSection'
 import { smartDigitalToolsSection } from './objects/HomePage/smartDigitalToolsSection'
+import { featuresShowcaseSection } from './objects/Features/featuresShowcaseSection'
+import { featureHeroSection } from './objects/Features/featureHeroSection'
+import { featureBenefitsSection } from './objects/Features/featureBenefitsSection'
+import { featureKeyFeaturesSection } from './objects/Features/featureKeyFeaturesSection'
+import { featureHowItWorksSection } from './objects/Features/featureHowItWorksSection'
+import { featureScienceSection } from './objects/Features/featureScienceSection'
 
 
 // Export everything as schemaTypes
@@ -93,6 +99,12 @@ export const schemaTypes = [
   whatsNewSection,
   appScreensGallery,
   experienceConnectoCarousel,
+  featuresShowcaseSection,
+  featureHeroSection,
+  featureBenefitsSection,
+  featureKeyFeaturesSection,
+  featureHowItWorksSection,
+  featureScienceSection,
 
   //homepage
   homePage,

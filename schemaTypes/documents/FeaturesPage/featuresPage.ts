@@ -26,6 +26,7 @@ export const featuresPage = defineType({
       description: 'Drag and drop to build your features page.',
       of: [
         { type: 'heroCallToAction' },
+        { type: 'featuresShowcaseSection' },
         { type: 'featuresGrid' },
         { type: 'whatsNewSection' },
         { type: 'appScreensGallery' },
