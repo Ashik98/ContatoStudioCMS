@@ -43,6 +43,8 @@ export const homePage = defineType({
       description: 'Drag and drop to build your home page.',
       of: [
         { type: 'contentFeaturesGrid' },
+        { type: 'aboutCommunicationSection' },
+        { type: 'smartDigitalToolsSection' },
         { type: 'networkSmarterHero' },
         { type: 'ourPartners' },
         { type: 'appShowcaseSection' },

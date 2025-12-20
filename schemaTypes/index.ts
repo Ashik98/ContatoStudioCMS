@@ -1,21 +1,21 @@
 // index.ts
 
 // 🧩 Objects
-import {seo} from './objects/seo'
-import {heroBlock} from './objects/heroBlock'
-import {portableTextBlocks} from './objects/portableTextBlocks'
-import {imageBlock} from './objects/imageBlock'
-import {galleryBlock} from './objects/galleryBlock'
-import {videoBlock} from './objects/videoBlock'
-import {documentBlock} from './objects/documentBlock'
-import {ctaBlock} from './objects/ctaBlock'
-import {featureBlock} from './objects/featureBlock'
-import {testimonialBlock} from './objects/testimonialBlock'
-import {teamMemberBlock} from './objects/teamMemberBlock'
+import { seo } from './objects/seo'
+import { heroBlock } from './objects/heroBlock'
+import { portableTextBlocks } from './objects/portableTextBlocks'
+import { imageBlock } from './objects/imageBlock'
+import { galleryBlock } from './objects/galleryBlock'
+import { videoBlock } from './objects/videoBlock'
+import { documentBlock } from './objects/documentBlock'
+import { ctaBlock } from './objects/ctaBlock'
+import { featureBlock } from './objects/featureBlock'
+import { testimonialBlock } from './objects/testimonialBlock'
+import { teamMemberBlock } from './objects/teamMemberBlock'
 
 // 📄 Documents
-import {video} from './documents/video'
-import {documentUpload} from './documents/documentUpload'
+import { video } from './documents/video'
+import { documentUpload } from './documents/documentUpload'
 import { loginPage } from './documents/loginPage'
 import { category } from './documents/category'
 import { videoHeaderText } from './documents/videoHeaderText'
@@ -40,7 +40,7 @@ import { pricingPlans } from './objects/HomePage/pricingPlans'
 import { trustStatistics } from './objects/HomePage/trustStatistics'
 import { userTestimonials } from './objects/HomePage/userTestimonials'
 import { appShowcaseSection } from './objects/HomePage/appShowcaseSection'
-import footerDocument from './documents/Footer/footerDocument' 
+import footerDocument from './documents/Footer/footerDocument'
 import { article } from './documents/article'
 import { supportPageType } from './documents/SupportPage/supportPage'
 import { newsletterSubscription } from './documents/newsLetterSubscription'
@@ -49,6 +49,8 @@ import { signupPageType } from './documents/SignUpPage/signupPageType'
 import { ourPartners } from './objects/HomePage/ourPartners'
 import { LogoDocument } from './documents/logoDocument'
 import { featureDetailPage } from './documents/FeaturesPage/featureDetailPage'
+import { aboutCommunicationSection } from './objects/HomePage/aboutCommunicationSection'
+import { smartDigitalToolsSection } from './objects/HomePage/smartDigitalToolsSection'
 
 
 // Export everything as schemaTypes
@@ -65,16 +67,17 @@ export const schemaTypes = [
   featureBlock,
   testimonialBlock,
   teamMemberBlock,
+  smartDigitalToolsSection,
 
   // Documents
- LogoDocument,
+  LogoDocument,
 
   video,
   documentUpload,
   loginPage,
   category,
-  videoHeaderText ,
-  downloadUrls , 
+  videoHeaderText,
+  downloadUrls,
 
   //aboutPage
   aboutPage,
@@ -93,7 +96,7 @@ export const schemaTypes = [
 
   //homepage
   homePage,
-  ourPartners, 
+  ourPartners,
   contentFeaturesGrid,
   networkSmarterHero,
   qrProfileCard,
@@ -102,10 +105,11 @@ export const schemaTypes = [
   platformLearning,
   userTestimonials,
   appShowcaseSection,
+  aboutCommunicationSection,
 
   //footer
-  footerDocument ,
-  article ,
+  footerDocument,
+  article,
   blogPageHeader,
   //support
   supportPageType,
