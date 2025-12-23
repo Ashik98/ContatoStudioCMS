@@ -1,16 +1,91 @@
 import { defineField, defineType } from 'sanity'
 
+/* =====================================================
+   Helper Fields (DECLARE FIRST)
+   ===================================================== */
+
+function heading() {
+    return defineField({
+        name: 'heading',
+        title: 'Heading',
+        type: 'string',
+        validation: r => r.required(),
+    })
+}
+
+function subheading() {
+    return defineField({
+        name: 'subheading',
+        title: 'Subheading',
+        type: 'string',
+    })
+}
+
+function description() {
+    return defineField({
+        name: 'description',
+        title: 'Description',
+        type: 'text',
+    })
+}
+
+function chipText() {
+    return defineField({
+        name: 'chipText',
+        title: 'Chip Text',
+        type: 'string',
+    })
+}
+
+function icon() {
+    return defineField({
+        name: 'icon',
+        title: 'Icon',
+        type: 'image',
+        options: { hotspot: true },
+    })
+}
+
+function image() {
+    return defineField({
+        name: 'image',
+        title: 'Image',
+        type: 'image',
+        options: { hotspot: true },
+    })
+}
+
+function bulletPoints(count: number) {
+    return defineField({
+        name: 'bulletPoints',
+        title: 'Bullet Points',
+        type: 'array',
+        validation: r => r.length(count),
+        of: [{ type: 'string' }],
+    })
+}
+
+function cardPreview(label: string) {
+    return {
+        select: { title: 'heading' },
+        prepare({ title }: any) {
+            return {
+                title: `${label} – ${title || 'Untitled'}`,
+            }
+        },
+    }
+}
+
+/* =====================================================
+   Section Schema
+   ===================================================== */
+
 export const smartDigitalToolsSection = defineType({
     name: 'smartDigitalToolsSection',
     title: 'Smart Digital Tools Section',
     type: 'object',
     fields: [
-        defineField({
-            name: 'heading',
-            title: 'Heading',
-            type: 'string',
-            validation: (rule) => rule.required(),
-        }),
+        heading(),
         defineField({
             name: 'subheading',
             title: 'Subheading',
@@ -20,56 +95,127 @@ export const smartDigitalToolsSection = defineType({
 
         defineField({
             name: 'cards',
-            title: 'Tool Cards (Images)',
-            description:
-                'Add images and assign their visual position. Exactly 6 cards recommended.',
+            title: 'Cards',
             type: 'array',
-            validation: (rule) => rule.min(1).max(6),
+            validation: r => r.min(1),
             of: [
                 {
                     type: 'object',
-                    name: 'toolCard',
+                    name: 'smartToolCardL1',
+                    title: 'L1 – Image Card',
                     fields: [
-                        defineField({
-                            name: 'image',
-                            title: 'Image',
-                            type: 'image',
-                            options: { hotspot: true },
-                            validation: (rule) => rule.required(),
-                        }),
-                        defineField({
-                            name: 'alt',
-                            title: 'Alt Text',
-                            type: 'string',
-                            description: 'Accessibility text for the image',
-                            validation: (rule) => rule.required(),
-                        }),
-                        defineField({
-                            name: 'position',
-                            title: 'Layout Position',
-                            type: 'string',
-                            description:
-                                'Controls where this image appears in the layout',
-                            options: {
-                                list: [
-                                    { title: 'Left – 1', value: 'left-1' },
-                                    { title: 'Left – 2', value: 'left-2' },
-                                    { title: 'Center', value: 'center' },
-                                    { title: 'Right – 1', value: 'right-1' },
-                                    { title: 'Right – 2', value: 'right-2' },
-                                    { title: 'Bottom / Wide', value: 'bottom' },
-                                ],
-                            },
-                            validation: (rule) => rule.required(),
-                        }),
+                        chipText(),
+                        heading(),
+                        subheading(),
+                        image(),
+                        description(),
+                        icon(),
                     ],
-                    preview: {
-                        select: {
-                            title: 'alt',
-                            media: 'image',
-                            subtitle: 'position',
+                    preview: cardPreview('L1'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'smartToolCardL2',
+                    title: 'L2 – Bullet Card',
+                    fields: [
+                        chipText(),
+                        heading(),
+                        subheading(),
+                        icon(),
+                        bulletPoints(3),
+                        description(),
+                    ],
+                    preview: cardPreview('L2'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'smartToolCardL3',
+                    title: 'L3 – Metrics Card',
+                    fields: [
+                        icon(),
+                        heading(),
+                        subheading(),
+                        chipText(),
+                        {
+                            name: 'metrics',
+                            title: 'Metrics',
+                            type: 'array',
+                            validation: r => r.length(3),
+                            of: [
+                                {
+                                    type: 'object',
+                                    fields: [
+                                        { name: 'topText', type: 'string' },
+                                        { name: 'centerText', type: 'string' },
+                                        { name: 'bottomText', type: 'string' },
+                                    ],
+                                },
+                            ],
                         },
-                    },
+                        description(),
+                    ],
+                    preview: cardPreview('L3'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'smartToolCardC1',
+                    title: 'C1 – Tall Card',
+                    fields: [
+                        image(),
+                        icon(),
+                        heading(),
+                        subheading(),
+                        description(),
+                        bulletPoints(3),
+                    ],
+                    preview: cardPreview('C1'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'smartToolCardR1',
+                    title: 'R1 – Image Right',
+                    fields: [
+                        image(),
+                        icon(),
+                        chipText(),
+                        heading(),
+                        subheading(),
+                        description(),
+                    ],
+                    preview: cardPreview('R1'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'smartToolCardR2',
+                    title: 'R2 – Tabs Card',
+                    fields: [
+                        icon(),
+                        chipText(),
+                        heading(),
+                        subheading(),
+                        {
+                            name: 'tabs',
+                            title: 'Tabs',
+                            type: 'array',
+                            validation: r => r.min(1),
+                            of: [
+                                {
+                                    type: 'object',
+                                    fields: [
+                                        { name: 'text', type: 'string' },
+                                        { name: 'icon', type: 'image' },
+                                    ],
+                                },
+                            ],
+                        },
+                        description(),
+                    ],
+                    preview: cardPreview('R2'),
                 },
             ],
         }),
@@ -77,17 +223,7 @@ export const smartDigitalToolsSection = defineType({
         defineField({
             name: 'cta',
             title: 'Call to Action',
-            type: 'ctaBlock', // 👈 reuse existing object
+            type: 'ctaBlock',
         }),
     ],
-    preview: {
-        select: {
-            title: 'heading',
-        },
-        prepare({ title }) {
-            return {
-                title: title || 'Smart Digital Tools Section',
-            }
-        },
-    },
 })
