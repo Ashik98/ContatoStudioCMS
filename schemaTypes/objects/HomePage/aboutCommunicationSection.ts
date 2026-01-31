@@ -47,7 +47,39 @@ export const aboutCommunicationSection = defineType({
       name: 'highlightFeatures',
       title: 'Highlight Features',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [
+        defineField({
+          name: 'highlightFeature',
+          title: 'Highlight Feature',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: rule => rule.required(),
+            }),
+            defineField({
+              name: 'icon',
+              title: 'Icon',
+              type: 'string',
+              description: 'Lucide icon name',
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              icon: 'icon',
+            },
+            prepare({ title, icon }) {
+              return {
+                title,
+                subtitle: icon ? `Icon: ${icon}` : 'No icon',
+              }
+            },
+          },
+        }),
+      ],
     }),
 
     // ─────────────────────────────
@@ -59,17 +91,10 @@ export const aboutCommunicationSection = defineType({
       type: 'array',
       of: [
         defineField({
-          name: 'bubble',
-          title: 'Bubble',
+          name: 'floatingInfo',
+          title: 'Floating Info',
           type: 'object',
           fields: [
-            defineField({
-              name: 'id',
-              title: 'ID',
-              type: 'string',
-              description: 'Unique key used on frontend',
-              validation: rule => rule.required(),
-            }),
             defineField({
               name: 'iconName',
               title: 'Icon Name',
