@@ -197,6 +197,8 @@ export const smartDigitalToolsSection = defineType({
                         heading(),
                         subheading(),
                         description(),
+                        bulletPoints(3),
+
                     ],
                     preview: cardPreview('Card 4'),
                 },
