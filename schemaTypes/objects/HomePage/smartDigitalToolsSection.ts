@@ -41,8 +41,8 @@ function icon() {
     return defineField({
         name: 'icon',
         title: 'Icon',
-        type: 'image',
-        options: { hotspot: true },
+        type: 'string',
+        description: 'Icon code to be replaced with an icon in the frontend.',
     })
 }
 
