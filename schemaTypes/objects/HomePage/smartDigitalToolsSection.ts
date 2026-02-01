@@ -101,23 +101,23 @@ export const smartDigitalToolsSection = defineType({
             of: [
                 {
                     type: 'object',
-                    name: 'smartToolCardL1',
-                    title: 'L1 – Image Card',
+                    name: 'card1',
+                    title: 'Card 1',
                     fields: [
+                        image(),
+                        icon(),
                         chipText(),
                         heading(),
                         subheading(),
-                        image(),
                         description(),
-                        icon(),
                     ],
-                    preview: cardPreview('L1'),
+                    preview: cardPreview('Card 1'),
                 },
 
                 {
                     type: 'object',
-                    name: 'smartToolCardL2',
-                    title: 'L2 – Bullet Card',
+                    name: 'card2',
+                    title: 'Card 2',
                     fields: [
                         chipText(),
                         heading(),
@@ -126,13 +126,13 @@ export const smartDigitalToolsSection = defineType({
                         bulletPoints(3),
                         description(),
                     ],
-                    preview: cardPreview('L2'),
+                    preview: cardPreview('Card 2'),
                 },
 
                 {
                     type: 'object',
-                    name: 'smartToolCardL3',
-                    title: 'L3 – Metrics Card',
+                    name: 'card3',
+                    title: 'Card 3',
                     fields: [
                         icon(),
                         heading(),
@@ -156,43 +156,42 @@ export const smartDigitalToolsSection = defineType({
                         },
                         description(),
                     ],
-                    preview: cardPreview('L3'),
+                    preview: cardPreview('Card 3'),
                 },
 
                 {
                     type: 'object',
-                    name: 'smartToolCardC1',
-                    title: 'C1 – Tall Card',
+                    name: 'card4',
+                    title: 'Card 4',
                     fields: [
-                        image(),
-                        icon(),
-                        heading(),
-                        subheading(),
-                        description(),
-                        bulletPoints(3),
-                    ],
-                    preview: cardPreview('C1'),
-                },
-
-                {
-                    type: 'object',
-                    name: 'smartToolCardR1',
-                    title: 'R1 – Image Right',
-                    fields: [
-                        image(),
                         icon(),
                         chipText(),
                         heading(),
                         subheading(),
                         description(),
                     ],
-                    preview: cardPreview('R1'),
+                    preview: cardPreview('Card 4'),
                 },
 
                 {
                     type: 'object',
-                    name: 'smartToolCardR2',
-                    title: 'R2 – Tabs Card',
+                    name: 'card5',
+                    title: 'Card 5',
+                    fields: [
+                        chipText(),
+                        heading(),
+                        subheading(),
+                        image(),
+                        description(),
+                        icon(),
+                    ],
+                    preview: cardPreview('Card 5'),
+                },
+
+                {
+                    type: 'object',
+                    name: 'card6',
+                    title: 'Card 6',
                     fields: [
                         icon(),
                         chipText(),
@@ -215,7 +214,7 @@ export const smartDigitalToolsSection = defineType({
                         },
                         description(),
                     ],
-                    preview: cardPreview('R2'),
+                    preview: cardPreview('Card 6'),
                 },
             ],
         }),
