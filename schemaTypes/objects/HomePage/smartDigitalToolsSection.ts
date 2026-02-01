@@ -50,8 +50,36 @@ function image() {
     return defineField({
         name: 'image',
         title: 'Image',
-        type: 'image',
-        options: { hotspot: true },
+        type: 'object',
+        fields: [
+            {
+                name: 'type',
+                title: 'Image Source Type',
+                type: 'string',
+                description: 'Choose how you want to add your image.',
+                options: {
+                    list: [
+                        { title: 'Upload File', value: 'upload' },
+                        { title: 'External URL', value: 'url' },
+                    ],
+                    layout: 'radio',
+                },
+                initialValue: 'upload',
+            },
+            {
+                name: 'upload',
+                title: 'Upload Image',
+                type: 'image',
+                options: { hotspot: true },
+                hidden: ({ parent }) => parent?.type !== 'upload',
+            },
+            {
+                name: 'url',
+                title: 'Image URL',
+                type: 'url',
+                hidden: ({ parent }) => parent?.type !== 'url',
+            },
+        ],
     })
 }
 
