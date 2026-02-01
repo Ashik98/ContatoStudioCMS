@@ -192,6 +192,7 @@ export const smartDigitalToolsSection = defineType({
                     name: 'card4',
                     title: 'Card 4',
                     fields: [
+                        image(),
                         icon(),
                         chipText(),
                         heading(),
