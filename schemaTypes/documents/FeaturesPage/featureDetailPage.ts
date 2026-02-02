@@ -4,68 +4,299 @@ export const featureDetailPage = defineType({
   name: 'featureDetailPage',
   title: 'Feature Detail Page',
   type: 'document',
+  groups: [
+    { name: 'content', title: 'Content', default: true },
+    { name: 'features', title: 'Features & Benefits' },
+    { name: 'howItWorks', title: 'How It Works' },
+    { name: 'moreInfo', title: 'More Info' },
+    { name: 'seo', title: 'SEO & Settings' },
+  ],
   fields: [
+    // Slug
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: { source: 'hero.title', maxLength: 96 },
-      validation: (r) => r.required(),
+      group: 'content',
+      options: { source: 'title', maxLength: 96 },
+      validation: (rule) => rule.required(),
     }),
 
+    // Basic Content Fields
     defineField({
-      name: 'hero',
-      title: 'Hero Section',
-      type: 'featureHeroSection',
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      group: 'content',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+      group: 'content',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+      group: 'content',
+    }),
+    defineField({
+      name: 'icon',
+      title: 'Icon Name',
+      type: 'string',
+      description: 'Icon name (e.g., "Brain", "Video", "MessageCircle")',
+      group: 'content',
+    }),
+    defineField({
+      name: 'detailedDescription',
+      title: 'Detailed Description',
+      type: 'text',
+      rows: 6,
+      group: 'content',
+    }),
+    defineField({
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'url',
+      group: 'content',
     }),
 
+    // Benefits - Array of strings
     defineField({
       name: 'benefits',
-      title: 'Benefits Section',
-      type: 'featureBenefitsSection',
+      title: 'Benefits',
+      type: 'array',
+      group: 'features',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
     }),
 
+    // Features - Array of objects
     defineField({
-      name: 'keyFeatures',
-      title: 'Key Features Section',
-      type: 'featureKeyFeaturesSection',
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      group: 'features',
+      of: [
+        {
+          type: 'object',
+          name: 'featureItem',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 2,
+            }),
+            defineField({
+              name: 'icon',
+              title: 'Icon Name',
+              type: 'string',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'description' },
+          },
+        },
+      ],
     }),
 
+    // Stats - Array of objects
     defineField({
-      name: 'howItWorks',
-      title: 'How It Works Section',
-      type: 'featureHowItWorksSection',
+      name: 'stats',
+      title: 'Stats',
+      type: 'array',
+      group: 'features',
+      of: [
+        {
+          type: 'object',
+          name: 'statItem',
+          fields: [
+            defineField({
+              name: 'number',
+              title: 'Number',
+              type: 'string',
+              description: 'e.g., "95%", "3x", "50M+"',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+          ],
+          preview: {
+            select: { title: 'number', subtitle: 'label' },
+          },
+        },
+      ],
     }),
 
+    // How It Works Steps
     defineField({
-      name: 'science',
-      title: 'Science Behind Section',
-      type: 'featureScienceSection',
+      name: 'howItWorksSteps',
+      title: 'How It Works Steps',
+      type: 'array',
+      group: 'howItWorks',
+      of: [
+        {
+          type: 'object',
+          name: 'howItWorksStep',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'content',
+              title: 'Content',
+              type: 'text',
+              rows: 4,
+            }),
+            defineField({
+              name: 'image',
+              title: 'Image URL',
+              type: 'url',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'content' },
+          },
+        },
+      ],
     }),
 
+    // Detail Points
+    defineField({
+      name: 'detailPoints',
+      title: 'Detail Points',
+      type: 'array',
+      group: 'howItWorks',
+      of: [
+        {
+          type: 'object',
+          name: 'detailPoint',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 2,
+            }),
+            defineField({
+              name: 'icon',
+              title: 'Icon Name',
+              type: 'string',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'description' },
+          },
+        },
+      ],
+    }),
+
+    // More Info Section
+    defineField({
+      name: 'moreInfo',
+      title: 'More Info',
+      type: 'object',
+      group: 'moreInfo',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+        }),
+        defineField({
+          name: 'paragraphs',
+          title: 'Paragraphs',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              name: 'paragraph',
+              fields: [
+                defineField({
+                  name: 'text',
+                  title: 'Text',
+                  type: 'text',
+                  rows: 4,
+                  validation: (rule) => rule.required(),
+                }),
+                defineField({
+                  name: 'emphasis',
+                  title: 'Emphasis',
+                  type: 'boolean',
+                  initialValue: false,
+                }),
+              ],
+              preview: {
+                select: { title: 'text', emphasis: 'emphasis' },
+                prepare({ title, emphasis }) {
+                  return {
+                    title: title?.substring(0, 50) + '...' || 'Paragraph',
+                    subtitle: emphasis ? 'Emphasized' : '',
+                  }
+                },
+              },
+            },
+          ],
+        }),
+      ],
+    }),
+
+    // SEO
     defineField({
       name: 'seo',
       title: 'SEO Settings',
       type: 'seo',
+      group: 'seo',
     }),
 
+    // Published
     defineField({
       name: 'isPublished',
       title: 'Published',
       type: 'boolean',
+      group: 'seo',
       initialValue: true,
     }),
   ],
 
   preview: {
     select: {
-      title: 'hero.title',
+      title: 'title',
       slug: 'slug.current',
+      isPublished: 'isPublished',
     },
-    prepare({ title, slug }) {
+    prepare({ title, slug, isPublished }) {
       return {
         title: title || 'Feature Detail Page',
-        subtitle: slug ? `/${slug}` : '',
+        subtitle: `${slug ? `/${slug}` : ''} ${isPublished ? '✓' : '(draft)'}`,
       }
     },
   },

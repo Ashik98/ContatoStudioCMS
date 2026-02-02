@@ -14,6 +14,13 @@ export const featuresGrid = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'sectionDescription',
+      title: 'Section Description',
+      type: 'text',
+      rows: 3,
+      description: 'Description text for the features section.',
+    }),
+    defineField({
       name: 'features',
       title: 'Features',
       type: 'array',
