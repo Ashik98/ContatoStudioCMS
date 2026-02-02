@@ -46,10 +46,20 @@ export const featuresGrid = defineType({
 })
 ,
             defineField({
-              name: 'orderIndex',
-              title: 'Display Order',
-              type: 'number',
-              validation: (rule) => rule.min(0).max(100),
+              name: 'badge',
+              title: 'Badge',
+              type: 'string',
+              description: 'Optional badge text to display on the feature (e.g., "New", "Popular").',
+            }),
+            defineField({
+              name: 'tags',
+              title: 'Tags',
+              type: 'array',
+              of: [{ type: 'string' }],
+              description: 'Tags associated with this feature.',
+              options: {
+                layout: 'tags',
+              },
             }),
           ],
           preview: {
