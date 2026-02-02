@@ -46,10 +46,14 @@ export const featuresGrid = defineType({
 })
 ,
             defineField({
-              name: 'badge',
-              title: 'Badge',
-              type: 'string',
-              description: 'Optional badge text to display on the feature (e.g., "New", "Popular").',
+              name: 'titleSection',
+              title: 'Title Section',
+              type: 'slug',
+              description: 'Slug identifier used to reference another section.',
+              options: {
+                source: 'featureName',
+                maxLength: 96,
+              },
             }),
             defineField({
               name: 'tags',
