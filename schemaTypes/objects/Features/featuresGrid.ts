@@ -42,7 +42,7 @@ export const featuresGrid = defineType({
               title: 'Feature Description',
               type: 'text',
               rows: 2,
-              validation: (rule) => rule.required().max(150),
+              validation: (rule) => rule.required(),
             }),
             defineField({
   name: 'iconName',
