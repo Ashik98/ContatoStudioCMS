@@ -39,22 +39,46 @@ export const featureDetailPage = defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      rows: 3,
+      type: 'array',
       group: 'content',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
+            { title: 'Quote', value: 'blockquote' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  defineField({
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  }),
+                ],
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
       name: 'icon',
       title: 'Icon Name',
       type: 'string',
       description: 'Icon name (e.g., "Brain", "Video", "MessageCircle")',
-      group: 'content',
-    }),
-    defineField({
-      name: 'detailedDescription',
-      title: 'Detailed Description',
-      type: 'text',
-      rows: 6,
       group: 'content',
     }),
     defineField({
