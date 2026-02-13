@@ -142,6 +142,14 @@ export const featureDetailPage = defineType({
       ],
     }),
 
+    // How It Works
+    defineField({
+      name: 'howItWorksHeading',
+      title: 'How It Works Heading',
+      type: 'string',
+      group: 'howItWorks',
+    }),
+
     // How It Works Steps
     defineField({
       name: 'howItWorksSteps',
@@ -162,8 +170,39 @@ export const featureDetailPage = defineType({
             defineField({
               name: 'content',
               title: 'Content',
-              type: 'text',
-              rows: 4,
+              type: 'array',
+              of: [
+                {
+                  type: 'block',
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'Quote', value: 'blockquote' },
+                  ],
+                  marks: {
+                    decorators: [
+                      { title: 'Bold', value: 'strong' },
+                      { title: 'Italic', value: 'em' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
+                      {
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        fields: [
+                          defineField({
+                            name: 'href',
+                            type: 'url',
+                            title: 'URL',
+                          }),
+                        ],
+                      },
+                    ],
+                  },
+                },
+              ],
             }),
             defineField({
               name: 'image',
@@ -172,7 +211,7 @@ export const featureDetailPage = defineType({
             }),
           ],
           preview: {
-            select: { title: 'title', subtitle: 'content' },
+            select: { title: 'title' },
           },
         },
       ],
